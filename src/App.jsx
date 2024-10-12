@@ -39,14 +39,9 @@ function App() {
   };
 
   const handleCardClick = (playerId) => {
-    if (gameStatus !== 'playing') return;
+    if (gameStatus !== 'playing') return false;
 
-    if (clickedPlayers.has(playerId)) {
-      if (currentScore > bestScore) {
-        setBestScore(currentScore);
-      }
-      setGameStatus('lost');
-    } else {
+    if (!clickedPlayers.has(playerId)) {
       const newScore = currentScore + 1;
       setCurrentScore(newScore);
       setClickedPlayers(new Set(clickedPlayers).add(playerId));
@@ -59,6 +54,13 @@ function App() {
       } else {
         setPlayers(shufflePlayers(players));
       }
+      return true; // Correct selection
+    } else {
+      if (currentScore > bestScore) {
+        setBestScore(currentScore);
+      }
+      setGameStatus('lost');
+      return false; // Incorrect selection
     }
   };
 

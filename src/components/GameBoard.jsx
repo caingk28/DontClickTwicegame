@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Card from './Card';
+import { playSound } from '../utils/audio';
 
 function GameBoard({ players, onCardClick, difficulty }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -9,7 +10,10 @@ function GameBoard({ players, onCardClick, difficulty }) {
     if (isFlipping) return;
     setIsFlipping(true);
     setIsFlipped(true);
-    onCardClick(playerId);
+    
+    // Play sound based on the result
+    const isCorrect = onCardClick(playerId);
+    playSound(isCorrect ? 'correct' : 'incorrect');
 
     // Reset the flipped state after a delay
     setTimeout(() => {

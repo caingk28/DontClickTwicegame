@@ -21,6 +21,7 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
-    "framer-motion": "^11.11.7"
+    "framer-motion": "^11.11.7",
+    "use-sound": "^4.0.3"
   }
 }
