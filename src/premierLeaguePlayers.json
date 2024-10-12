@@ -68,5 +68,35 @@
     "id": 14,
     "name": "Kai Havertz",
     "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p219847.png"
+  },
+  {
+    "id": 15,
+    "name": "Rúben Dias",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p171314.png"
+  },
+  {
+    "id": 16,
+    "name": "Declan Rice",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p204480.png"
+  },
+  {
+    "id": 17,
+    "name": "Alisson",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p116535.png"
+  },
+  {
+    "id": 18,
+    "name": "Rodri",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p220566.png"
+  },
+  {
+    "id": 19,
+    "name": "Martin Ødegaard",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p184029.png"
+  },
+  {
+    "id": 20,
+    "name": "James Maddison",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p172780.png"
   }
 ]

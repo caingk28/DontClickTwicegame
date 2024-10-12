@@ -24,7 +24,8 @@ function App() {
     switch(difficulty) {
       case 'easy': return allPlayers.slice(0, 4);
       case 'medium': return allPlayers.slice(0, 8);
-      case 'hard': return allPlayers;
+      case 'hard': return allPlayers.slice(0, 14);
+      case 'extraHard': return allPlayers.slice(0, 20);
       default: return allPlayers.slice(0, 4);
     }
   }
@@ -34,6 +35,7 @@ function App() {
       case 'easy': return 4;
       case 'medium': return 8;
       case 'hard': return 14;
+      case 'extraHard': return 20;
       default: return 4;
     }
   };
@@ -41,27 +43,26 @@ function App() {
   const handleCardClick = (playerId) => {
     if (gameStatus !== 'playing') return false;
 
-    if (!clickedPlayers.has(playerId)) {
-      const newScore = currentScore + 1;
-      setCurrentScore(newScore);
-      setClickedPlayers(new Set(clickedPlayers).add(playerId));
-      
-      if (newScore === getWinScore()) {
-        if (newScore > bestScore) {
-          setBestScore(newScore);
-        }
-        setGameStatus('won');
-      } else {
-        setPlayers(shufflePlayers(players));
-      }
-      return true; // Correct selection
-    } else {
-      if (currentScore > bestScore) {
-        setBestScore(currentScore);
-      }
+    if (clickedPlayers.has(playerId)) {
       setGameStatus('lost');
-      return false; // Incorrect selection
+      return false;
     }
+
+    const newClickedPlayers = new Set(clickedPlayers).add(playerId);
+    setClickedPlayers(newClickedPlayers);
+    setCurrentScore(newClickedPlayers.size);
+
+    if (newClickedPlayers.size > bestScore) {
+      setBestScore(newClickedPlayers.size);
+    }
+
+    if (newClickedPlayers.size === getWinScore()) {
+      setGameStatus('won');
+    } else {
+      setPlayers(shufflePlayers(players));
+    }
+
+    return true;
   };
 
   const resetGame = () => {
@@ -76,28 +77,19 @@ function App() {
   }, [difficulty]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-300 py-2 sm:py-4 md:py-8 flex flex-col">
-      <div className="container mx-auto px-2 sm:px-4 max-w-4xl flex-grow flex flex-col">
-        <Header difficulty={difficulty} setDifficulty={setDifficulty} />
-        <Scoreboard currentScore={currentScore} bestScore={bestScore} />
-        <div className="flex-grow overflow-hidden">
-          <GameBoard 
-            players={players}
-            onCardClick={handleCardClick}
-            difficulty={difficulty}
+    <div className="App min-h-screen bg-purple-100 text-purple-900 p-4">
+      <Header difficulty={difficulty} setDifficulty={setDifficulty} />
+      <Scoreboard currentScore={currentScore} bestScore={bestScore} />
+      <GameBoard players={players} onCardClick={handleCardClick} difficulty={difficulty} />
+      <AnimatePresence>
+        {gameStatus !== 'playing' && (
+          <GameEndScreen
+            gameStatus={gameStatus}
+            score={currentScore}
+            onRestart={resetGame}
           />
-        </div>
-        <AnimatePresence>
-          {gameStatus !== 'playing' && (
-            <GameEndScreen 
-              gameStatus={gameStatus}
-              currentScore={currentScore}
-              bestScore={bestScore}
-              onPlayAgain={resetGame}
-            />
-          )}
-        </AnimatePresence>
-      </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

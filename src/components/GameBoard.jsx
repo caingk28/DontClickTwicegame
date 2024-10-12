@@ -13,6 +13,7 @@ function GameBoard({ players, onCardClick, difficulty }) {
     
     // Play sound based on the result
     const isCorrect = onCardClick(playerId);
+    console.log('Attempting to play sound:', isCorrect ? 'correct' : 'incorrect');
     playSound(isCorrect ? 'correct' : 'incorrect');
 
     // Reset the flipped state after a delay

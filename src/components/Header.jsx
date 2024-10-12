@@ -15,6 +15,7 @@ function Header({ difficulty, setDifficulty }) {
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
+          <option value="extraHard">Extra Hard</option>
         </select>
       </div>
     </header>
