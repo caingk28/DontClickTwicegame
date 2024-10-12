@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Harry Kane",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p78830.png"
+  },
+  {
+    "id": 2,
+    "name": "Kevin De Bruyne",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p61366.png"
+  },
+  {
+    "id": 3,
+    "name": "Mohamed Salah",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p118748.png"
+  },
+  {
+    "id": 4,
+    "name": "Bruno Fernandes",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p141746.png"
+  },
+  {
+    "id": 5,
+    "name": "Son Heung-min",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p85971.png"
+  },
+  {
+    "id": 6,
+    "name": "Erling Haaland",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p223094.png"
+  },
+  {
+    "id": 7,
+    "name": "Virgil van Dijk",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p97032.png"
+  },
+  {
+    "id": 8,
+    "name": "Raheem Sterling",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p103955.png"
+  },
+  {
+    "id": 9,
+    "name": "Jack Grealish",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p114283.png"
+  },
+  {
+    "id": 10,
+    "name": "Marcus Rashford",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p176297.png"
+  },
+  {
+    "id": 11,
+    "name": "Trent Alexander-Arnold",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p169187.png"
+  },
+  {
+    "id": 12,
+    "name": "Bukayo Saka",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p223340.png"
+  },
+  {
+    "id": 13,
+    "name": "Phil Foden",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p209244.png"
+  },
+  {
+    "id": 14,
+    "name": "Kai Havertz",
+    "image": "https://resources.premierleague.com/premierleague/photos/players/250x250/p219847.png"
+  }
+]
